@@ -1,0 +1,47 @@
+@startuml
+actor       蛇精    as snake   #Purple
+actor       水娃   as waterboy #Blue
+actor       火娃    as fireboy  #Red
+actor       乌龟    as tortoise   #Green
+entity      左右障碍物  as barrier1 #White
+entity      上下障碍物  as barrier2 #Gray
+entity      水池  as pool #Gray
+
+snake -[#Red]> waterboy : 告诉
+note right: 走吧...
+
+barrier1 -[#Green]> barrier1 : 开
+barrier2 -[#Green]> barrier2 : 开
+
+snake -[#Grey]> snake : 前进
+waterboy -[#Grey]> waterboy : 前进
+fireboy -[#Grey]> fireboy : 前进
+
+
+tortoise -[#Green]> waterboy : 载上
+tortoise -[#Green]> snake : 载上
+tortoise -[#Green]> fireboy : 载上
+
+snake -[#Red]> waterboy : 告诉
+note right
+这个地方叫乌龟盼水，这个地方已经干了三百年了。
+如果有了河水乌龟就会驮我们过河。
+可是这儿老是干个底朝天的，我们又得绕远路了。
+end note
+
+waterboy -[#Red]> snake : 告诉
+note right: 别拐弯抹角的了，这有什么难的。
+waterboy -[#Blue]> pool : 施法
+note right: 水被注满
+
+snake -[#Red]> waterboy : 告诉
+note right: 啊？
+
+tortoise -[#Grey]> tortoise : 前进
+tortoise -[#Grey]> waterboy : 使前进
+tortoise -[#Grey]> fireboy : 使前进
+tortoise -[#Grey]> snake : 使前进
+
+tortoise -[#Purple]> waterboy : 看向
+waterboy -[#Purple]> tortoise : 抚摸
+@enduml

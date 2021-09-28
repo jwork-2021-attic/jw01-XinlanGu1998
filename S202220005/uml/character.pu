@@ -1,0 +1,50 @@
+@startuml
+class Being{
+  receiveMagic()
+}
+
+class Magic{
+  String kind
+}
+
+class Creature {
+    String name
+    turnHead()
+    speak()
+    touch()
+    move()
+}
+
+class MagicalCreature{
+    Magic magic
+    doMagicOn()
+}
+
+
+class Barrier{
+    open()
+    close()
+}
+
+class Tortoise{
+ Creature[] carrieds
+  carry()
+  uncarry()
+  swim()
+}
+
+class Pool{
+  boolean hasWater
+}
+
+Tortoise --|> Creature
+
+Creature --|> Being
+
+
+MagicalCreature --|> Creature
+
+Barrier --|> Being
+
+Pool --|> Being
+@enduml
